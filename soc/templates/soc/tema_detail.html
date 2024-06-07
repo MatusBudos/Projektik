@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+{% if tema %}
+    <div class="container tp-3">
+        <h2>{{tema.nazov}}</h2>
+        <ul class= "list-group">
+        <li class="list-group-item">
+        <p>Dostupnosť: {{tema.dostupnost}}</p>    
+        <p>Odbor: {{tema.odbor}}</p>
+        <p>Konzultant: <a class= "link-offset-2 link-underline link-underline-opacity-0"  href="{% url 'ucitel' ucitel=tema.konzultant.id %}">{{tema.konzultant}}</a></p>
+        <p>Popis: {{tema.popis}}</p>
+        {% if tema.student%}
+        <p>Študent: <a class= "link-offset-2 link-underline link-underline-opacity-0"  href="{% url 'student' student=tema.student.id %}">{{tema.student}}</a></p>
+        {%else%}
+        <p>Študent: Voľné</p>
+        {%endif%}
+        <p>Počet konzultácii: {{tema.pocet_konzultacii}}</p>
+        </li>
+        </ul>
+    </div>
+{% endif %}
+    
+
+{% endblock %}

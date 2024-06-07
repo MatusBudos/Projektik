@@ -5,11 +5,11 @@ Modely:
 -Študent - Meno, Priezvisko, Trieda, email, heslo
 
 Endpointy: 
--temy - vsetko o nich, usporiadanie podla toho, ci su volne - hlavna praca
--ucitel/<id> - vsetky temy daneho ucitela
--student/<id> - jeho praca
--tema/<id> - dana tema
--statistika - štatistiky, kolko je tem, kolko ich je volnych, cakajucich, obsadenych, pocet ucitelov, studentov
+-(temy) - vsetko o nich, usporiadanie podla toho, ci su volne - hlavna praca  
+-(ucitel/<id>) - vsetky temy daneho ucitela
+-(student/<id>) - jeho praca
+-(tema/<id>) - dana tema
+-(statistika) - štatistiky, kolko je tem, kolko ich je volnych, cakajucich, obsadenych, pocet ucitelov, studentov
 -novatema - pridat nazov, odbor(FK), popis, konzultant, obsadenost(volna) - formular
 
 Novy django projekt - Budos

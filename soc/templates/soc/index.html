@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+{% if temy %}
+    <div class="container tp-3">
+        <h2>Témy</h2>
+        <ul class= "list-group">
+        {% for tema in temy %}
+        <p><li class="list-group-item"><a class= "link-offset-2 link-underline link-underline-opacity-0"  href="{% url 'tema' tema=tema.id %}">{{tema.nazov}}</a></p>
+        <p>Dostupnosť: {{tema.dostupnost}}</p>    
+        <p>Odbor: {{tema.odbor}}</p>
+        </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+    
+
+{% endblock %}

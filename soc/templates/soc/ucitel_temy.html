@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+        {%if ucitel%}
+        <h2>{{ucitel}}</h2>
+        <ul class= "list-group">
+            {% for tema in temy %}
+            <div class="container tp-3">
+                <li class="list-group-item">
+                    <p>{{tema.nazov}}</p>
+                    <p>Dostupnosť: {{tema.dostupnost}}</p>    
+                    <p>Odbor: {{tema.odbor}}</p>
+                    <p>Popis: {{tema.popis}}</p>
+                {% if tema.student%}
+                <p>Študent: <a class= "link-offset-2 link-underline link-underline-opacity-0"  href="{% url 'student' student=tema.student.id %}">{{tema.student}}</a></p>
+                {%else%}
+                <p>Študent: Voľné</p>
+                {%endif%}
+                <p>Počet konzultácii: {{tema.pocet_konzultacii}}</p>
+                </li>
+            </div>
+            {%endfor%}
+        </ul>
+        {%endif%}
+
+        {%if student%}
+        <h2>{{student}}</h2>
+        <ul class= "list-group">
+            <div class="container tp-3">
+                <li class="list-group-item">
+                    <p>{{tema.nazov}}</p>
+                    <p>Dostupnosť: {{tema.dostupnost}}</p>    
+                    <p>Odbor: {{tema.odbor}}</p>
+                    <p>Popis: {{tema.popis}}</p>
+                    <p>Konzultant: <a class= "link-offset-2 link-underline link-underline-opacity-0"  href="{% url 'ucitel' ucitel=tema.konzultant.id %}">{{tema.konzultant}}</a></p>
+                <p>Počet konzultácii: {{tema.pocet_konzultacii}}</p>
+                </li>
+            </div>
+        </ul>
+        {%endif%}
+
+{% endblock %}

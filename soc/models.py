@@ -60,7 +60,7 @@ class Tema(models.Model):
     pocet_konzultacii = models.IntegerField()
 
     def __str__(self):
-        return f"{self.nazov} {self.dostupnost}"
+        return f"{self.nazov} {self.dostupnost} {self.konzultant} {self.popis} {self.student} {self.odbor} {self.pocet_konzultacii}"
     
     class Meta:
         verbose_name = "Téma"
