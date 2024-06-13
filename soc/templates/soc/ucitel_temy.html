@@ -1,13 +1,14 @@
 {% extends "base.html" %}
+{%load static%}
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'soc/style_index.css' %}">
         {%if ucitel%}
-        <h2>{{ucitel}}</h2>
         <ul class= "list-group">
             {% for tema in temy %}
             <div class="container tp-3">
+                <h2>{{ucitel}}</h2>
                 <li class="list-group-item">
-                    <p>{{tema.nazov}}</p>
+                    <p><a class= "link-offset-2 link-underline link-underline-opacity-0"  href="{% url 'tema' tema=tema.id %}">{{tema.nazov}}</a></p>
                     <p>Dostupnosť: {{tema.dostupnost}}</p>    
                     <p>Odbor: {{tema.odbor}}</p>
                     <p>Popis: {{tema.popis}}</p>
@@ -24,11 +25,12 @@
         {%endif%}
 
         {%if student%}
-        <h2>{{student}}</h2>
         <ul class= "list-group">
-            <div class="container tp-3">
-                <li class="list-group-item">
-                    <p>{{tema.nazov}}</p>
+            {% for tema in tema %}
+                    <div class="container tp-3">
+                        <h2>{{student}}</h2>
+                    <li class="list-group-item">
+                    <p><a class= "link-offset-2 link-underline link-underline-opacity-0"  href="{% url 'tema' tema=tema.id %}">{{tema.nazov}}</a></p>
                     <p>Dostupnosť: {{tema.dostupnost}}</p>    
                     <p>Odbor: {{tema.odbor}}</p>
                     <p>Popis: {{tema.popis}}</p>
@@ -36,6 +38,7 @@
                 <p>Počet konzultácii: {{tema.pocet_konzultacii}}</p>
                 </li>
             </div>
+            {%endfor%}
         </ul>
         {%endif%}
 

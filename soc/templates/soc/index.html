@@ -1,18 +1,62 @@
 {% extends "base.html" %}
 {% block content %}
-{% if temy %}
-    <div class="container tp-3">
-        <h2>Témy</h2>
-        <ul class= "list-group">
+{% load static %}
+<link rel="stylesheet" href="{% static 'soc/style_index.css' %}">
+<script src="{% static 'soc/filter.js' %}"></script>
+
+<div class="container tp-3">
+    <h2>Témy</h2>
+    <div class="filter-section">
+        <div class="filter-dropdown">
+            <label for="filter-select">Dostupnosť:</label>
+            <select id="filter-select" onchange="filterThemes()">
+                <option value="all">Všetky témy</option>
+                {% for dostupnost in dostupnost %}
+                <option value="{{ dostupnost.id }}">{{ dostupnost.nazov }}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <div class="filter-dropdown">
+            <label for="filter-odbor">Odbor:</label>
+            <select id="filter-odbor" onchange="filterThemes()">
+                <option value="all">Všetky odbory</option>
+                {% for odbor in odbory %}
+                <option value="{{ odbor.id }}">{{ odbor.nazov }}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <div class="filter-dropdown">
+            <label for="filter-konzultant">Konzultant:</label>
+            <select id="filter-konzultant" onchange="filterThemes()">
+                <option value="all">Všetci konzultanti</option>
+                {% for konzultant in konzultanti %}
+                    <option value="{{ konzultant.id }}">{{ konzultant}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <ul class="list-group" id="temy-list">
+    {% if temy %}
         {% for tema in temy %}
-        <p><li class="list-group-item"><a class= "link-offset-2 link-underline link-underline-opacity-0"  href="{% url 'tema' tema=tema.id %}">{{tema.nazov}}</a></p>
-        <p>Dostupnosť: {{tema.dostupnost}}</p>    
-        <p>Odbor: {{tema.odbor}}</p>
+        <li class="list-group-item tema-item"
+            data-dostupnost="{{ tema.dostupnost.id }}"
+            data-odbor="{{ tema.odbor.id }}"
+            data-konzultant="{{ tema.konzultant.id }}">
+            <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="{% url 'tema' tema=tema.id %}">{{ tema.nazov }}</a></p>
+            <p>Dostupnosť: {{ tema.dostupnost }}</p>
+            <p>Odbor: {{ tema.odbor }}</p>
+            {% if tema.konzultant %}
+            <p>Konzultant: {{ tema.konzultant }}</p>
+            {% endif %}
+            {% if tema.dostupnost.id == 1 %}
+            <button>Prihlásiť sa</button>
+            {% elif tema.dostupnost.id == 2 %}
+            <button>Potvrdiť</button>
+            {% endif %}
         </li>
         {% endfor %}
-        </ul>
-    </div>
-{% endif %}
-    
+    {% endif %}
+    </ul>
+</div>
 
 {% endblock %}

@@ -1,14 +1,14 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
-
+<link rel="stylesheet" href="{% static 'soc/stylestats.css' %}">
+<div class="container tp-3">
         <h2>Štatistiky</h2>
-            <div class="container tp-3">
-                    <p>Počet tém: {{temy}}</p>
-                    <p>Počet voľných tém: {{volne}}</p>
-                    <p>Počet obsadených tém: {{obsadene}}</p>
-                    <p>Počet tém čakajúcich na schválenie: {{cakajuce}}</p>
-                    <p>Počet študentov: {{studenti}}</p>
-                    <p>Počet učiteľov: {{ucitelia}}</p>
-            </div>
-
+  <p>Počet tém: {{temy}}</p>
+  <p>Počet voľných tém: {{volne}}</p>
+  <p>Počet obsadených tém: {{obsadene}}</p>
+  <p>Počet tém čakajúcich na schválenie: {{cakajuce}}</p>
+  <p>Počet študentov: {{studenti}}</p>
+  <p>Počet učiteľov: {{ucitelia}}</p>
+</div>
 {% endblock %}

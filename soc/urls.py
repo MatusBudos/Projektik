@@ -7,4 +7,5 @@ urlpatterns = [
     path('ucitel/<ucitel>/', views.vypis_ucitela, name='ucitel'),
     path('student/<student>/', views.vypis_studenta, name='student'),
     path('statistika/', views.vypis_statistiku, name='statistika'),
+    path('pridat_temu/', views.nova_tema, name='pridat_temu'),
 ]
