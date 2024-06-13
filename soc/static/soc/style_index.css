@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
-  color: #2c2c2c; /* Tmavší text */
-  background-color: #808080; /* Tmavšie pozadie */
+  color: #2c2c2c; 
+  background-color: #808080; 
   margin: 0;
   padding: 20px;
 }
 
 .container.tp-3 {
-  background-color: #d9d9d9; /* Svetlejšie pozadie kontajnera */
+  background-color: #d9d9d9; 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -15,7 +15,7 @@ body {
 
 h2 {
   text-align: center;
-  color: #2c2c2c; /* Tmavší text */
+  color: #2c2c2c; 
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -26,7 +26,7 @@ ul.list-group {
 }
 
 li.list-group-item {
-  background-color: #f5f5f5; /* Svetlejšie pozadie položiek */
+  background-color: #f5f5f5; 
   padding: 15px;
   margin-bottom: 10px;
   border: 1px solid #bbb;
@@ -34,8 +34,9 @@ li.list-group-item {
 }
 
 li.list-group-item a {
-  color: #007bff; /* Modrá farba odkazov */
+  color: #007bff; 
   text-decoration: none;
+  font-size: 18px;
 }
 
 li.list-group-item a:hover {
@@ -48,8 +49,8 @@ p {
 }
 
 button {
-  background-color: #2c2c2c; /* Tmavšia farba tlačidla */
-  color: #ffffff; /* Svetlý text na tlačidle */
+  background-color: #2c2c2c; 
+  color: #ffffff; 
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -59,7 +60,7 @@ button {
 }
 
 button:hover {
-  background-color: #404040; /* Tmavší odtieň na hover */
+  background-color: #404040; 
 }
 .filter-section {
   display: flex;
@@ -70,7 +71,7 @@ button:hover {
 
 .filter-dropdown {
   flex: 1;
-  margin-right: 10px; /* Medzera medzi dropdownmi */
+  margin-right: 10px; 
 }
 
 .filter-dropdown select {
@@ -113,5 +114,22 @@ ul.list-group {
 
 .list-group-item button:hover {
   background-color: #0056b3;
+}
+
+.list-group-item .dostupnost-label {
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.list-group-item .volne {
+  background-color: limegreen;
+}
+
+.list-group-item .cakajuce {
+  background-color: yellow; 
+}
+
+.list-group-item .obsadene {
+  background-color: red; 
 }
 

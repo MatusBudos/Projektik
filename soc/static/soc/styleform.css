@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
-  color: #2c2c2c; /* Tmavší text */
-  background-color: #808080; /* Tmavšie pozadie */
+  color: #2c2c2c; 
+  background-color: #808080;
   margin: 0;
   padding: 20px;
 }
 
 form {
-  background-color: #d9d9d9; /* Svetlejšie pozadie formulára */
+  background-color: #d9d9d9;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -16,9 +16,13 @@ form {
   color: #2c2c2c;
 }
 
+form h2 {
+  text-align: center;
+}
+
 h1 {
   text-align: center;
-  color: #d9d9d9; /* Tmavší text */
+  color: #d9d9d9; 
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -27,7 +31,7 @@ label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #2c2c2c; /* Tmavší text */
+  color: #2c2c2c; 
 }
 
 input[type="text"],
@@ -39,8 +43,8 @@ select {
   border: 1px solid #bbb;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #fff; /* Svetlé vstupné polia */
-  color: #2c2c2c; /* Tmavší text */
+  background-color: #fff;
+  color: #2c2c2c; 
 }
 
 textarea {
@@ -50,8 +54,8 @@ textarea {
 
 button {
   width: 100%;
-  background-color: #2c2c2c; /* Tmavšia farba tlačidla */
-  color: #ffffff; /* Svetlý text na tlačidle */
+  background-color: #2c2c2c; 
+  color: #ffffff;
   padding: 10px;
   border: none;
   border-radius: 4px;

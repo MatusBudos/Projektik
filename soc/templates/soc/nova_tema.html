@@ -3,17 +3,17 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'soc/styleform.css' %}">
-    <h1>Pridať novú tému</h1>
     <form method="POST">
         {% csrf_token %}
+        <h2>Pridať novú tému</h2>
         <label for="nazov">Názov:</label>
-        <input type="text" id="nazov" name="nazov">
+        <input type="text" id="nazov" name="nazov" required>
 
         <label for="popis">Popis:</label>
-        <textarea id="popis" name="popis"></textarea>
+        <textarea id="popis" name="popis" required></textarea>
 
         <label for="konzultant">Konzultant:</label>
-        <select id="konzultant" name="konzultant">
+        <select id="konzultant" name="konzultant" required>
             {% for konzultant in konzultant %}
                 <option value="{{ konzultant.id }}">{{ konzultant.meno }} {{ konzultant.priezvisko }}</option>
             {% endfor %}
@@ -28,7 +28,7 @@
         </select>
 
         <label for="odbor">Odbor:</label>
-        <select id="odbor" name="odbor">
+        <select id="odbor" name="odbor" required>
             {% for odbor in odbor %}
                 <option value="{{ odbor.id }}">{{ odbor.nazov }}</option>
             {% endfor %}
